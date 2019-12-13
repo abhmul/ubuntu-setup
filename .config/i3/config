@@ -74,7 +74,7 @@ bindsym $mod+Shift+q kill
 # Initiate Shutdown
 set $mode_system System (l) lock, (s) suspend, (h) hibernate, (r) reboot, (p) poweroff
 mode "$mode_system" {
-    bindsym l exec /home/abhmul/.scripts/lock.sh, mode "default"
+    bindsym l exec ~/.scripts/lock.sh, mode "default"
     bindsym s exec systemctl suspend, mode "default"
     bindsym h exec systemctl hibernate, mode "default"
     bindsym r exec systemctl reboot

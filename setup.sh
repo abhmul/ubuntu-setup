@@ -27,6 +27,9 @@ sudo apt install indicator-sound-switcher
 # Install tools
 sudo apt install vim
 sudo apt install ranger
+sudo apt install scrot
+sudo apt install shutter
+sudo apt install xclip
 
 # Setup background
 sudo apt install feh
