@@ -21,22 +21,22 @@ exec --no-startup-id indicator-sound-switcher
 
 # Setup Custom Managers
 exec --no-startup-id ~/nonotifs/nonotif_indicator.py
-exec --no-startup-id ~/msi-perkeyrgb/msi_perkeyrgb/keyboard_indicator.py
+# exec --no-startup-id ~/msi-perkeyrgb/msi_perkeyrgb/keyboard_indicator.py
 
 bindsym $mod+Shift+n exec --no-startup-id "killall nm-applet; sleep 2; nm-applet"
 bindsym $mod+Shift+b exec --no-startup-id "killall blueman-applet; sleep 2; blueman-applet"
 
-# Set up volume
-bindsym XF86AudioRaiseVolume exec "amixer -q sset Master,0 1+ unmute"
-bindsym XF86AudioLowerVolume exec "amixer -q sset Master,0 1- unmute"
+# Set up volume - if volume doesn't work
+# bindsym XF86AudioRaiseVolume exec "amixer -q sset Master,0 1+ unmute"
+# bindsym XF86AudioLowerVolume exec "amixer -q sset Master,0 1- unmute"
 
-# Screen Brightness up / down
-bindsym XF86MonBrightnessDown exec "python ~/.brightness_control.py -0.1"
-bindsym XF86MonBrightnessUp exec "python ~/.brightness_control.py 0.1"
+# Screen Brightness up / down  - if brightness doesn't work
+# bindsym XF86MonBrightnessDown exec "python ~/.brightness_control.py -0.1"
+# bindsym XF86MonBrightnessUp exec "python ~/.brightness_control.py 0.1"
 
 # Finer controls
-bindsym Shift+XF86MonBrightnessDown exec "python ~/.brightness_control.py -0.02"
-bindsym Shift+XF86MonBrightnessUp exec "python ~/.brightness_control.py 0.02"
+# bindsym Shift+XF86MonBrightnessDown exec "python ~/.brightness_control.py -0.02"
+# bindsym Shift+XF86MonBrightnessUp exec "python ~/.brightness_control.py 0.02"
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -65,9 +65,6 @@ bindsym --release Shift+Print exec scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'm
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
-# start ranger
-bindsym $mod+Shift+f exec xterm -e ranger
-
 # start chrome
 bindsym $mod+c exec google-chrome
 
@@ -77,7 +74,7 @@ bindsym $mod+Shift+q kill
 # Initiate Shutdown
 set $mode_system System (l) lock, (s) suspend, (h) hibernate, (r) reboot, (p) poweroff
 mode "$mode_system" {
-    bindsym l exec /home/abhmul/.config/i3/lock.sh, mode "default"
+    bindsym l exec /home/abhmul/.scripts/lock.sh, mode "default"
     bindsym s exec systemctl suspend, mode "default"
     bindsym h exec systemctl hibernate, mode "default"
     bindsym r exec systemctl reboot
@@ -171,7 +168,7 @@ bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
 # move focused workspace to display
-bindsym $mod+Ctrl+less move workspace to output left
+bindsym $mod+less move workspace to output left
 bindsym $mod+greater move workspace to output right
 
 # reload the configuration file
