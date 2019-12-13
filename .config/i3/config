@@ -16,15 +16,15 @@ exec --no-startup-id ~/.scripts/startup.sh
 
 # Set the background, wifi, bluetooth, & sound
 exec --no-startup-id nm-applet
-exec --no-startup-id blueman-applet
+# exec --no-startup-id blueman-applet
 exec --no-startup-id indicator-sound-switcher
 
 # Setup Custom Managers
-exec --no-startup-id ~/nonotifs/nonotif_indicator.py
-# exec --no-startup-id ~/msi-perkeyrgb/msi_perkeyrgb/keyboard_indicator.py
+exec --no-startup-id ~/indicators/nonotifs/nonotif_indicator.py
+# exec --no-startup-id ~/indicators/msi-perkeyrgb/msi_perkeyrgb/keyboard_indicator.py
 
 bindsym $mod+Shift+n exec --no-startup-id "killall nm-applet; sleep 2; nm-applet"
-bindsym $mod+Shift+b exec --no-startup-id "killall blueman-applet; sleep 2; blueman-applet"
+# bindsym $mod+Shift+b exec --no-startup-id "killall blueman-applet; sleep 2; blueman-applet"
 
 # Set up volume - if volume doesn't work
 # bindsym XF86AudioRaiseVolume exec "amixer -q sset Master,0 1+ unmute"

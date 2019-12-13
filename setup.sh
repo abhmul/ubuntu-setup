@@ -31,10 +31,20 @@ sudo apt install ranger
 # Setup background
 sudo apt install feh
 
-# Set up symbolic links
-rm -rf .config/i3
-ln -s .config/i3 ~/.config/i3
-ln -s .scripts ~/.scripts
-ln -s indicators ~/.indicators
-ln -s Pictures/normandy-destruction.jpg ~/Pictures/normandy-destruction.jpg
+# Set up symbolic link
+echo "Setting up symbolic links"
+SETUP_PATH=$(pwd)
+echo "Path to current directory $SETUP_PATH"
+
+cd ~/.config
+rm -rf i3
+ln -s $SETUP_PATH/.config/i3 i3
+cd ~
+rm -rf .scripts
+ln -s $SETUP_PATH/.scripts .scripts
+rm -rf indicators
+ln -s $SETUP_PATH/indicators indicators
+cd ~/Pictures
+rm normandy-destruction.jpg
+ln -s $SETUP_PATH/Pictures/normandy-destruction.jpg normandy-destruction.jpg
 
