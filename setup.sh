@@ -13,7 +13,7 @@ sudo apt install arandr
 # Install applets
 sudo apt install network-manager
 sudo apt install blueman
-sudo apt-add-repository ppa:yktooo/pp
+sudo apt-add-repository ppa:yktooo/ppa
 sudo apt update
 sudo apt install indicator-sound-switcher
 
