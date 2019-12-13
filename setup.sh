@@ -24,6 +24,10 @@ sudo apt install indicator-sound-switcher
 # sudo python3 setup.py install
 # sudo cp 99-msi-rgb.rules /etc/udev/rules.d/
 
+# Install tools
+sudo apt install vim
+sudo apt install ranger
+
 # Setup background
 sudo apt install feh
 
