@@ -50,4 +50,5 @@ ln -s $SETUP_PATH/indicators indicators
 cd ~/Pictures
 rm normandy-destruction.jpg
 ln -s $SETUP_PATH/Pictures/normandy-destruction.jpg normandy-destruction.jpg
-
+sudo rm /etc/i3status.conf
+sudo ln -s $SETUP_PATH/i3status.conf /etc/i3status.conf
