@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# Set up symbolic link
-echo "Setting up symbolic links"
 SETUP_PATH=$(pwd)
 echo "Path to current directory $SETUP_PATH"
 if [[ $SETUP_PATH != *ubuntu-setup ]]; then
@@ -10,21 +8,21 @@ if [[ $SETUP_PATH != *ubuntu-setup ]]; then
 fi
 
 # Setup and upgrade
-sudo apt update
-sudo apt dist-upgrade
+sudo apt -y update
+sudo apt -y dist-upgrade
 
 # Install i3wm
-sudo apt install i3
+sudo apt -y install i3
 
 # Install screen layout manager
-sudo apt install arandr
+sudo apt -y install arandr
 
 # Install applets
-sudo apt install network-manager
-sudo apt install blueman
-sudo apt-add-repository ppa:yktooo/ppa
-sudo apt update
-sudo apt install indicator-sound-switcher
+sudo apt -y install network-manager
+sudo apt -y install blueman
+sudo apt-add-repository -y ppa:yktooo/ppa
+sudo apt -y update
+sudo apt -y install indicator-sound-switcher
 
 # Install msi rgb keyboard manager
 # cd indicators
@@ -34,11 +32,11 @@ sudo apt install indicator-sound-switcher
 # sudo cp 99-msi-rgb.rules /etc/udev/rules.d/
 
 # Install tools
-sudo apt install vim
-sudo apt install ranger
-sudo apt install scrot
-sudo apt install shutter
-sudo apt install xclip
+sudo apt -y install vim
+sudo apt -y install ranger
+sudo apt -y install scrot
+sudo apt -y install shutter
+sudo apt -y install xclip
 
 # Setup software
 snap install go --classic
@@ -48,9 +46,11 @@ snap install obsidian
 snap install zoom-client
 
 # Setup background
-sudo apt install feh
+sudo apt -y install feh
 
 
+# Set up symbolic link
+echo "Setting up symbolic links"
 
 cd $HOME/.config && \
 	rm -rf i3 && \
