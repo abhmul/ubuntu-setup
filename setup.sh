@@ -52,39 +52,53 @@ sudo apt -y install feh
 # Set up symbolic link
 echo "Setting up symbolic links"
 
-cd $HOME/.config && \
-	rm -rf i3 && \
-	ln -s $SETUP_PATH/.config/i3 i3 && \
-	rm -rf i3status && \
+mkdir $HOME/.config
+cd $HOME/.config && {
+	rm -rf i3
+	ln -s $SETUP_PATH/.config/i3 i3
+	rm -rf i3status
 	ln -s $SETUP_PATH/.config/i3status i3status
-cd $HOME && \
-	rm -rf .scripts && \
+}
+cd $HOME && {
+	rm -rf .scripts
 	ln -s $SETUP_PATH/.scripts .scripts
-cd $HOME && \
-	rm -rf indicators && \
+}
+cd $HOME && {
+	rm -rf indicators
 	ln -s $SETUP_PATH/indicators indicators
-cd $HOME/Pictures && \
-	rm normandy-destruction.jpg && \
+}
+mkdir $HOME/Pictures
+cd $HOME/Pictures && {
+	rm normandy-destruction.jpg
 	ln -s $SETUP_PATH/Pictures/normandy-destruction.jpg normandy-destruction.jpg
-cd $HOME && \
-	rm .bashrc.extra && \
-	ln -s $SETUP_PATH/.bashrc.extra .bashrc.extra && \
-	echo "\n. $HOME/.bashrc.extra" >> .bashrc && \ 
-	rm .bash_aliases && \
-	ln -s $SETUP_PATH/.bash_aliases .bash_aliases && \
-	rm .bash_profile && \
-	ln -s $SETUP_PATH/.bash_profile .bash_profile && \
-	echo "\n\nCurrent state of bash settings" && \
+}
+cd $HOME && {
+	rm .bashrc.extra
+	ln -s $SETUP_PATH/.bashrc.extra .bashrc.extra
+	echo "\n. $HOME/.bashrc.extra" >> .bashrc 
+	rm .bash_aliases
+	ln -s $SETUP_PATH/.bash_aliases .bash_aliases
+	rm .bash_profile
+	ln -s $SETUP_PATH/.bash_profile .bash_profile
+	echo "\n\nCurrent state of bash settings"
 	l -alh | grep .bash
 	echo "\nUsing new bashrc"
 	source ~/.bashrc
-
+}
 
 
 # Install Docker
 echo "\n\nInstall docker at https://docs.docker.com/engine/install/ubuntu/#installation-methods"
+echo "Test installation with dktest"
 
 # Setup workstation
-cd $HOME
-mkdir dev
-mkdir sync-documents
+cd $HOME && {
+	mkdir dev
+	mkdir sync-documents
+}
+
+# Run alias commands that do some setup
+up
+p
+o
+
