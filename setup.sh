@@ -80,6 +80,13 @@ cd msi-perkeyrgb/
 sudo python3 setup.py install
 sudo cp 99-msi-rgb.rules /etc/udev/rules.d/
 
+# Install msi rgb keyboard manager
+cd indicators
+git clone https://github.com/Askannz/msi-perkeyrgb
+cd msi-perkeyrgb/
+sudo python3 setup.py install
+sudo cp 99-msi-rgb.rules /etc/udev/rules.d/
+
 # Setup background
 sudo apt -y install feh
 
