@@ -61,7 +61,7 @@ cd $HOME && {
 	rm .bash_profile
 	ln -s $SETUP_PATH/.bash_profile .bash_profile
 	log "Current state of bash settings"
-	l -alh | grep .bash
+	ls -alh | grep .bash
 	log "Using new bashrc"
 	source ~/.bashrc
 }
