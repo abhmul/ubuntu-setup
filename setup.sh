@@ -53,6 +53,19 @@ sudo apt -y install feh
 log "Setting up symbolic links"
 
 cd $HOME && {
+	rm .bashrc.extra
+	ln -s $SETUP_PATH/.bashrc.extra .bashrc.extra
+	printf "\n. $HOME/.bashrc.extra\n" >> .bashrc 
+	rm .bash_aliases
+	ln -s $SETUP_PATH/.bash_aliases .bash_aliases
+	rm .bash_profile
+	ln -s $SETUP_PATH/.bash_profile .bash_profile
+	log "Current state of bash settings"
+	l -alh | grep .bash
+	log "Using new bashrc"
+	source ~/.bashrc
+}
+cd $HOME && {
 	rm .gitconfig
 	ln -s $SETUP_PATH/.gitconfig .gitconfig
 }
@@ -76,19 +89,7 @@ cd $HOME/Pictures && {
 	rm normandy-destruction.jpg
 	ln -s $SETUP_PATH/Pictures/normandy-destruction.jpg normandy-destruction.jpg
 }
-cd $HOME && {
-	rm .bashrc.extra
-	ln -s $SETUP_PATH/.bashrc.extra .bashrc.extra
-	printf "\n. $HOME/.bashrc.extra\n" >> .bashrc 
-	rm .bash_aliases
-	ln -s $SETUP_PATH/.bash_aliases .bash_aliases
-	rm .bash_profile
-	ln -s $SETUP_PATH/.bash_profile .bash_profile
-	log "Current state of bash settings"
-	l -alh | grep .bash
-	log "Using new bashrc"
-	source ~/.bashrc
-}
+
 
 
 # Install Docker
