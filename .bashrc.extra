@@ -5,9 +5,3 @@ export PATH=$LOCALPATH/bin/:$SNAPPATH/bin:$PATH
 export PATH=$PATH:$HOME/.emacs.d/bin
 export GOPATH=$SNAPPATH/go
 export PATH=$GOPATH:$GOPATH/bin:$PATH
-
-### Computer Specific - Webster Desktop
-
-# Mount my data partition if it's not been mounted yet
-! [ -a "/media/abhijeet/Data" ] && udisksctl mount -b /dev/sda5
-
