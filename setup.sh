@@ -3,7 +3,7 @@
 log() {
 	printf "\n"
 	printf "$@"
-	printf "\n"
+	printf "\n\n"
 }
 
 SETUP_PATH=$(pwd)
