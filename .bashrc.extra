@@ -3,5 +3,6 @@ export SNAPPATH=/snap
 export LOCALPATH=$HOME/.local
 export PATH=$LOCALPATH/bin/:$SNAPPATH/bin:$PATH
 export PATH=$PATH:$HOME/.emacs.d/bin
-export GOPATH=$SNAPPATH/go
+export GOPATH=$HOME/go
 export PATH=$GOPATH:$GOPATH/bin:$PATH
+
