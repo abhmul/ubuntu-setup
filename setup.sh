@@ -1,9 +1,9 @@
 #!/bin/bash
 
 log() {
-	log "\n\n"
-	log $1
-	log "\n\n"
+	printf "\n"
+	printf "$@"
+	printf "\n"
 }
 
 SETUP_PATH=$(pwd)
