@@ -1,15 +1,36 @@
 #!/bin/bash
 
+log() {
+	log "\n\n"
+	log $1
+	log "\n\n"
+}
+
 SETUP_PATH=$(pwd)
-echo "Path to current directory $SETUP_PATH"
+log "Path to current directory $SETUP_PATH"
 if [[ $SETUP_PATH != *ubuntu-setup ]]; then
-	echo "Must run from root of ubuntu-setup!"
+	log "Must run from root of ubuntu-setup!"
 	exit 1
 fi
 
 # Setup and upgrade
 sudo apt -y update
 sudo apt -y dist-upgrade
+
+# Install tools
+sudo apt -y install git
+sudo apt -y install vim
+sudo apt -y install ranger
+sudo apt -y install scrot
+sudo apt -y install shutter
+sudo apt -y install xclip
+
+# Setup software
+snap install go --classic
+snap install vscode --classic
+snap install emacs --classic
+snap install obsidian
+snap install zoom-client
 
 # Install i3wm
 sudo apt -y install i3
@@ -24,27 +45,17 @@ sudo apt-add-repository -y ppa:yktooo/ppa
 sudo apt -y update
 sudo apt -y install indicator-sound-switcher
 
-# Install tools
-sudo apt -y install vim
-sudo apt -y install ranger
-sudo apt -y install scrot
-sudo apt -y install shutter
-sudo apt -y install xclip
-
-# Setup software
-snap install go --classic
-snap install vscode --classic
-snap install emacs --classic
-snap install obsidian
-snap install zoom-client
-
 # Setup background
 sudo apt -y install feh
 
 
 # Set up symbolic link
-echo "Setting up symbolic links"
+log "Setting up symbolic links"
 
+cd $HOME && {
+	rm .gitconfig
+	ln -s $SETUP_PATH/.gitconfig .gitconfig
+}
 mkdir $HOME/.config
 cd $HOME/.config && {
 	rm -rf i3
@@ -68,21 +79,21 @@ cd $HOME/Pictures && {
 cd $HOME && {
 	rm .bashrc.extra
 	ln -s $SETUP_PATH/.bashrc.extra .bashrc.extra
-	echo "\n. $HOME/.bashrc.extra" >> .bashrc 
+	printf "\n. $HOME/.bashrc.extra\n" >> .bashrc 
 	rm .bash_aliases
 	ln -s $SETUP_PATH/.bash_aliases .bash_aliases
 	rm .bash_profile
 	ln -s $SETUP_PATH/.bash_profile .bash_profile
-	echo "\n\nCurrent state of bash settings"
+	log "Current state of bash settings"
 	l -alh | grep .bash
-	echo "\nUsing new bashrc"
+	log "Using new bashrc"
 	source ~/.bashrc
 }
 
 
 # Install Docker
-echo "\n\nInstall docker at https://docs.docker.com/engine/install/ubuntu/#installation-methods"
-echo "Test installation with dktest"
+log "Install docker at https://docs.docker.com/engine/install/ubuntu/#installation-methods"
+log "Test installation with dktest"
 
 # Setup workstation
 cd $HOME && {
