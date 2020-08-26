@@ -155,15 +155,15 @@ export PROJECTS_NAME='projects-repo'
 export DEV=$HOME/dev
 export PROJECTS=$DEV/$PROJECTS_NAME
 projects() {
-        if [[ ! -d $PROJECTS ]]
-        then
-                mkdir -p $DEV && \
-                cd $DEV && \
-                git clone https://github.com/abhmul/$PROJECTS_NAME.git
-                conda env create -f pyprojects/environment.yml
-        fi
-        cd $PROJECTS
-        prepare
+	if [[ ! -d $PROJECTS ]]
+	then
+		mkdir -p $DEV && \
+		cd $DEV && \
+		git clone https://github.com/abhmul/$PROJECTS_NAME.git
+		conda env create -f pyprojects/environment.yml
+	fi
+	cd $PROJECTS
+	prepare
 }
 alias p='projects'
 prepare() {
