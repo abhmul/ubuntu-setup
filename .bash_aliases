@@ -37,7 +37,19 @@ alias gitaliases='gitconfig'
 alias ga='gitaliases'
 
 # obsidian
-alias o='cd ~/Documents/obsidian/vault'
+export OBSIDIAN=$HOME/Documents/obsidian
+export VAULT_NAME='obsidian-vault'
+ovault() {
+        if [[ ! -d $OBSIDIAN ]]
+        then
+                mkdir -p $OBSIDIAN && \
+                cd $OBSIDIAN && \
+                git clone https://github.com/abhmul/$VAULT_NAME.git
+        fi
+        cd $OBSIDIAN/$VAULT_NAME
+}
+
+alias o='ovault'
 alias osync='o && g up'
 
 
@@ -51,7 +63,7 @@ export PROJECTS_NAME='projects-repo'
 export DEV=$HOME/dev
 export PROJECTS=$DEV/$PROJECTS_NAME
 projects() {
-	if [[ ! -d $DEV/$PROJECTS_NAME ]]
+	if [[ ! -d $PROJECTS ]]
 	then
 		mkdir -p $DEV && \
 		cd $DEV && \
