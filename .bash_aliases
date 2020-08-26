@@ -86,5 +86,5 @@ dkbuild() {
 }
 dktest() {
 	dkbuild && \
-	docker run -it test:latest /bin/sh
+	docker run -it test:latest /bin/bash
 }

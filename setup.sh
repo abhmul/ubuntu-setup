@@ -1,5 +1,14 @@
 #!/bin/bash
 
+# Set up symbolic link
+echo "Setting up symbolic links"
+SETUP_PATH=$(pwd)
+echo "Path to current directory $SETUP_PATH"
+if [[ $SETUP_PATH != *ubuntu-setup ]]; then
+	echo "Must run from root of ubuntu-setup!"
+	exit 1
+fi
+
 # Setup and upgrade
 sudo apt update
 sudo apt dist-upgrade
@@ -41,14 +50,7 @@ snap install zoom-client
 # Setup background
 sudo apt install feh
 
-# Set up symbolic link
-echo "Setting up symbolic links"
-SETUP_PATH=$(pwd)
-echo "Path to current directory $SETUP_PATH"
-if [[ $SETUP_PATH != *ubuntu-setup ]]; then
-	echo "Must run from root of ubuntu-setup!"
-	exit 1
-fi
+
 
 cd $HOME/.config && \
 	rm -rf i3 && \
