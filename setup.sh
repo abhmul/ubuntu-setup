@@ -17,6 +17,23 @@ fi
 sudo apt -y update
 sudo apt -y dist-upgrade
 
+# Set up bashrc
+log "Setting up bashrc"
+
+cd $HOME && {
+	rm .bashrc.extra
+	ln -s $SETUP_PATH/.bashrc.extra .bashrc.extra
+	printf "\n. $HOME/.bashrc.extra\n" >> .bashrc 
+	rm .bash_aliases
+	ln -s $SETUP_PATH/.bash_aliases .bash_aliases
+	rm .bash_profile
+	ln -s $SETUP_PATH/.bash_profile .bash_profile
+	log "Current state of bash settings"
+	ls -alh | grep .bash
+	log "Using new bashrc"
+	source ~/.bashrc
+}
+
 # Install tools
 sudo apt -y install git
 sudo apt -y install vim
@@ -49,23 +66,9 @@ sudo apt -y install indicator-sound-switcher
 # Setup background
 sudo apt -y install feh
 
+# Set up more symbolic links
+log "set up symbolic links"
 
-# Set up symbolic link
-log "Setting up symbolic links"
-
-cd $HOME && {
-	rm .bashrc.extra
-	ln -s $SETUP_PATH/.bashrc.extra .bashrc.extra
-	printf "\n. $HOME/.bashrc.extra\n" >> .bashrc 
-	rm .bash_aliases
-	ln -s $SETUP_PATH/.bash_aliases .bash_aliases
-	rm .bash_profile
-	ln -s $SETUP_PATH/.bash_profile .bash_profile
-	log "Current state of bash settings"
-	ls -alh | grep .bash
-	log "Using new bashrc"
-	source ~/.bashrc
-}
 cd $HOME && {
 	rm .gitconfig
 	ln -s $SETUP_PATH/.gitconfig .gitconfig
