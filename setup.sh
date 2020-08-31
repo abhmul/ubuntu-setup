@@ -49,11 +49,6 @@ snap install emacs --classic
 snap install obsidian
 snap install zoom-client
 go get -u github.com/odeke-em/drive/cmd/drive
-cd $HOME && {
-	mkdir gdrive
-	drive init
-	drive pull sync-documents
-}
 
 # Install i3wm
 sudo apt -y install i3
@@ -108,7 +103,10 @@ log "Test installation with dktest"
 # Setup workstation
 cd $HOME && {
 	mkdir dev
-	mkdir sync-documents
+	mkdir gdrive && \
+	drive init && \
+	drive pull sync-documents
+
 }
 
 # Run alias commands that do some setup

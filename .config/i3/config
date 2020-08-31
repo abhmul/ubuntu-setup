@@ -28,7 +28,6 @@ exec --no-startup-id udiskie -t -a
 
 # Setup Custom Managers
 exec --no-startup-id ~/indicators/nonotifs/nonotif_indicator.py
-# exec --no-startup-id ~/indicators/msi-perkeyrgb/msi_perkeyrgb/keyboard_indicator.py
 
 bindsym $mod+Shift+n exec --no-startup-id "killall nm-applet; sleep 2; nm-applet"
 bindsym $mod+Shift+b exec --no-startup-id "killall blueman-applet; sleep 2; blueman-applet"
@@ -36,14 +35,6 @@ bindsym $mod+Shift+b exec --no-startup-id "killall blueman-applet; sleep 2; blue
 # Set up volume - if volume doesn't work
 bindsym XF86AudioRaiseVolume exec "amixer -q sset Master,0 1+ unmute"
 bindsym XF86AudioLowerVolume exec "amixer -q sset Master,0 1- unmute"
-
-# Screen Brightness up / down  - if brightness doesn't work
-# bindsym XF86MonBrightnessDown exec "python ~/.brightness_control.py -0.1"
-# bindsym XF86MonBrightnessUp exec "python ~/.brightness_control.py 0.1"
-
-# Finer controls
-# bindsym Shift+XF86MonBrightnessDown exec "python ~/.brightness_control.py -0.02"
-# bindsym Shift+XF86MonBrightnessUp exec "python ~/.brightness_control.py 0.02"
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
