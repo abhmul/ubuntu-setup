@@ -27,6 +27,10 @@ alias keys='xev | grep -A2 --line-buffered "^KeyRelease" | sed -n "/keycode /s/^
 alias logs='gedit /var/log/syslog'
 alias v='uname -a && lsb_release -a'
 
+# setup
+alias us='cd $HOME/ubuntu-setup'
+alias dus='cd $HOME/dev/ubuntu-setup'
+
 # help
 alias h='function hdi(){ howdoi $* -c -n 5; }; hdi'
 
@@ -37,8 +41,8 @@ alias gitaliases='gitconfig'
 alias ga='gitaliases'
 
 # obsidian
-export OBSIDIAN=$HOME/Documents/obsidian
 export VAULT_NAME='obsidian-vault'
+export OBSIDIAN=$HOME/Documents/
 ovault() {
         if [[ ! -d $OBSIDIAN ]]
         then
