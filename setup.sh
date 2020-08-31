@@ -31,6 +31,7 @@ snap install vscode --classic
 snap install emacs --classic
 snap install obsidian
 snap install zoom-client
+go get -u github.com/odeke-em/drive/cmd/drive
 
 # Install i3wm
 sudo apt -y install i3
