@@ -128,3 +128,6 @@ up
 p
 o
 
+# Setup backlight control
+sudo cp $SETUP_PATH/open_brightness.service /etc/systemd/system/
+sudo systemctl enable open_brightness

@@ -1,0 +1,9 @@
+[Unit]
+Description=Gives user access to backlight files
+
+[Service]
+Type=oneshot
+ExecStart=/bin/sh /home/abhmul/.scripts/.open_brightness.sh 
+
+[Install]
+WantedBy=multi-user.target
