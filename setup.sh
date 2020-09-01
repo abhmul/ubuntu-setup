@@ -43,11 +43,12 @@ sudo apt -y install shutter
 sudo apt -y install xclip
 
 # Setup software
-snap install go --classic
-snap install code --classic
-snap install emacs --classic
-snap install obsidian
-snap install zoom-client
+sudo snap install go --classic
+sudo snap install code --classic
+sudo snap install emacs --classic
+wget https://github.com/obsidianmd/obsidian-releases/releases/download/v0.8.9/obsidian_0.8.9_amd64.snap
+sudo snap install obsidian_0.8.9_amd64.snap --dangerous
+sudo snap install zoom-client
 go get -u github.com/odeke-em/drive/cmd/drive
 
 # Install i3wm
