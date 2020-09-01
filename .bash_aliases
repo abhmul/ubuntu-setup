@@ -44,7 +44,7 @@ alias ga='gitaliases'
 export VAULT_NAME='obsidian-vault'
 export OBSIDIAN=$HOME/Documents/
 ovault() {
-        if [[ ! -d $OBSIDIAN ]]
+        if [[ ! -d $OBSIDIAN/$VAULT_NAME ]]
         then
                 mkdir -p $OBSIDIAN && \
                 cd $OBSIDIAN && \
