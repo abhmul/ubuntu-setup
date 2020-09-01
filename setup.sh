@@ -44,7 +44,7 @@ sudo apt -y install xclip
 
 # Setup software
 snap install go --classic
-snap install vscode --classic
+snap install code --classic
 snap install emacs --classic
 snap install obsidian
 snap install zoom-client
