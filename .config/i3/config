@@ -29,6 +29,8 @@ exec --no-startup-id udiskie -t -a
 # Setup Custom Managers
 exec --no-startup-id ~/indicators/nonotifs/nonotif_indicator.py
 
+# Setup window setup
+
 bindsym $mod+Shift+n exec --no-startup-id "killall nm-applet; sleep 2; nm-applet"
 bindsym $mod+Shift+b exec --no-startup-id "killall blueman-applet; sleep 2; blueman-applet"
 
@@ -38,6 +40,14 @@ bindsym XF86AudioLowerVolume exec "amixer -q sset Master,0 1- unmute"
 
 # Clipboard management
 bindsym $mod+Ctrl+c exec --no-startup-id ~/.scripts/clear-clipboard.sh
+
+# Setup workspaces
+exec --no-startup-id i3-msg 'workspace 1; exec obsidian'
+exec --no-startup-id i3-msg 'workspace 2; exec i3-sensible-terminal; exec i3-sensible-terminal; workspace 1'
+exec --no-startup-id i3-msg 'workspace 3; exec google-chrome; workspace 1'
+exec --no-startup-id i3-msg 'workspace 4; exec google-chrome; workspace 1'
+exec --no-startup-id i3-msg 'workspace 5; exec google-chrome; workspace 1'
+
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
