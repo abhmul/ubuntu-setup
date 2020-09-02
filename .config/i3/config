@@ -42,11 +42,10 @@ bindsym XF86AudioLowerVolume exec "amixer -q sset Master,0 1- unmute"
 bindsym $mod+Ctrl+c exec --no-startup-id ~/.scripts/clear-clipboard.sh
 
 # Setup workspaces
+# Setup workspaces
 exec --no-startup-id i3-msg 'workspace 1; exec obsidian'
-exec --no-startup-id i3-msg 'workspace 2; exec i3-sensible-terminal; exec i3-sensible-terminal; workspace 1'
-exec --no-startup-id i3-msg 'workspace 3; exec google-chrome; workspace 1'
-exec --no-startup-id i3-msg 'workspace 4; exec google-chrome; workspace 1'
-exec --no-startup-id i3-msg 'workspace 5; exec google-chrome; workspace 1'
+exec --no-startup-id i3-msg 'workspace 2; exec i3-sensible-terminal; exec i3-sensible-terminal'
+exec --no-startup-id i3-msg 'workspace 1'
 
 
 # Font for window titles. Will also be used by the bar unless a different font
