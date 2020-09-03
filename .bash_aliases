@@ -41,8 +41,8 @@ alias gitaliases='gitconfig'
 alias ga='gitaliases'
 
 # sync-documents
-export $DRIVE_PATH=$HOME/gdrive
-export $SYNC_DOCUMENTS=$DRIVE_PATH/sync-documents
+export DRIVE_PATH=$HOME/gdrive
+export SYNC_DOCUMENTS=$DRIVE_PATH/sync-documents
 sync-documents() {
 	if [[ ! -d $SYNC_DOCUMENTS ]]
 	then
