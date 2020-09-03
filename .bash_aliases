@@ -48,7 +48,7 @@ ovault() {
         then
                 mkdir -p $OBSIDIAN && \
                 cd $OBSIDIAN && \
-                git clone https://github.com/abhmul/$VAULT_NAME.git
+                git clone git@github.com:abhmul/obsidian-vault.git 
         fi
         cd $OBSIDIAN/$VAULT_NAME
 }

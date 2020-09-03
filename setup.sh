@@ -101,6 +101,9 @@ cd $HOME/Pictures && {
 log "Install docker at https://docs.docker.com/engine/install/ubuntu/#installation-methods"
 log "Test installation with dktest"
 
+# Setup git ssh key
+log "Setup git ssh key"
+
 # Setup workstation
 cd $HOME && {
 	mkdir dev
