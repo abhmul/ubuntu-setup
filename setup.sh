@@ -32,6 +32,9 @@ cd $HOME && {
 	ls -alh | grep .bash
 	log "Using new bashrc"
 	source ~/.bashrc
+	rm .driverc
+	ln -s $SETUP_PATH/.driverc .driverc
+	log "Using new driver"
 }
 
 # Install tools
