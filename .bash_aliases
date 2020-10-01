@@ -35,7 +35,7 @@ alias dus='cd $HOME/dev/ubuntu-setup'
 alias h='function hdi(){ howdoi $* -c -n 5; }; hdi'
 
 # list
-alias l='l -alh'
+alias l='ls -alh'
 
 # git
 alias g='git'
