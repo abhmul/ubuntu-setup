@@ -86,22 +86,26 @@ alias tensorflow='sudo docker run --gpus all -v $HOME:$HOME -u $(id -u):$(id -g)
 export PROJECTS_NAME='projects-repo'
 export DEV=$HOME/dev
 export PROJECTS=$DEV/$PROJECTS_NAME
+
+# projects
+export PROJECTS_NAME='projects-repo'
+export DEV=$HOME/dev
+export PROJECTS=$DEV/$PROJECTS_NAME
 projects() {
-	if [[ ! -d $PROJECTS ]]
-	then
-		mkdir -p $DEV && \
-		cd $DEV && \
-		git clone https://github.com/abhmul/$PROJECTS_NAME.git
-		conda env create -f environment.yml
-	fi
-	cd $PROJECTS
-	prepare
+        if [[ ! -d $PROJECTS ]]
+        then
+                mkdir -p $DEV && \
+                cd $DEV && \
+                git clone https://github.com/abhmul/$PROJECTS_NAME.git
+                conda env create -f pyprojects/environment.yml
+        fi
+        cd $PROJECTS
+        prepare
 }
 alias p='projects'
 prepare() {
-	cp $HOME/.bash_aliases $PROJECTS && \
-	cp $HOME/.gitconfig $PROJECTS
-	conda activate projects
+        git pull
+        conda activate pyprojects
 }
 
 # scratch
