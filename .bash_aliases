@@ -105,7 +105,6 @@ projects() {
 alias p='projects'
 prepare() {
         git pull
-	conda env update --name=pyprojects --file=pyprojects/environment.yml
         conda activate pyprojects
 }
 
