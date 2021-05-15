@@ -5,4 +5,4 @@ export PATH=$LOCALPATH/bin/:$SNAPPATH/bin:$PATH
 export PATH=$PATH:$HOME/.emacs.d/bin
 export GOPATH=$HOME/go
 export PATH=$GOPATH:$GOPATH/bin:$PATH
-
+export EDITOR=vim
