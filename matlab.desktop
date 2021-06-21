@@ -1,0 +1,13 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Matlab
+Tooltip=Run math stuff                          
+Comment=Run math stuff
+Exec=/home/abhijeet/matlab/bin/matlab %f
+ExecutionMode=normal
+Type=Application
+Icon=/usr/share/aescrypt/SmallLock.png
+Categories=Application;Utility;TextEditor;
+MimeType=all/allfiles;
+Enabled=true
+

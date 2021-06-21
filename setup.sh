@@ -116,6 +116,18 @@ cd $HOME && {
 
 }
 
+# Matlab setup
+echo "Will you use matlab? [y,N]: "
+read input
+if [[ $input == "Y" || $input == "y" ]]; then
+        log "Creating matlab desktop file"
+	mkdir $HOME/matlab
+	sudo cp ./matlab.desktop /usr/share/applications/
+	log "Please install matlab to your $HOME/matlab folder"
+else
+        :
+fi
+
 # Run alias commands that do some setup
 up
 p
