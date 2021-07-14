@@ -66,6 +66,7 @@ sudo apt -y install blueman
 sudo apt-add-repository -y ppa:yktooo/ppa
 sudo apt -y update
 sudo apt -y install indicator-sound-switcher
+sudo apt -y install redshift
 
 # Setup background
 sudo apt -y install feh

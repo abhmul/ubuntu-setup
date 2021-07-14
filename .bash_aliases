@@ -86,11 +86,6 @@ alias tensorflow='sudo docker run --gpus all -v $HOME:$HOME -u $(id -u):$(id -g)
 export PROJECTS_NAME='projects-repo'
 export DEV=$HOME/dev
 export PROJECTS=$DEV/$PROJECTS_NAME
-
-# projects
-export PROJECTS_NAME='projects-repo'
-export DEV=$HOME/dev
-export PROJECTS=$DEV/$PROJECTS_NAME
 projects() {
         if [[ ! -d $PROJECTS ]]
         then
@@ -130,3 +125,7 @@ dktest() {
 	dkbuild && \
 	sudo docker run -it test:latest /bin/sh
 }
+
+# redshift
+alias night='redshift -O 3300'
+alias day='redshift -O 5400'
