@@ -59,6 +59,7 @@ sync-documents() {
 	cd $SYNC_DOCUMENTS
 }
 alias sd='sync-documents'
+alias library='sync-documents && cd library'
 
 # obsidian
 export VAULT_NAME='obsidian-vault'
