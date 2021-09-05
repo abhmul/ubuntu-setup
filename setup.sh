@@ -44,6 +44,8 @@ sudo apt -y install ranger
 sudo apt -y install scrot
 sudo apt -y install shutter
 sudo apt -y install xclip
+sudo apt -y install flatpak
+sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 # Setup software
 sudo snap install go --classic
@@ -104,6 +106,12 @@ cd $HOME/Pictures && {
 # Install Docker
 log "Install docker at https://docs.docker.com/engine/install/ubuntu/#installation-methods"
 log "Test installation with dktest"
+
+# Install Opera and Firefox
+log "Install opera at https://www.opera.com/download"
+sudo flatpak install flathub org.mozilla.firefox
+
+
 
 # Setup git ssh key
 log "Setup git ssh key"

@@ -75,7 +75,7 @@ bindsym --release $mod+Shift+Print exec scrot -s 'screenshot_%Y%m%d_%H%M%S.png' 
 bindsym $mod+Return exec i3-sensible-terminal
 
 # start chrome
-bindsym $mod+c exec google-chrome
+bindsym $mod+c exec opera
 
 # kill focused window
 bindsym $mod+Shift+q kill
