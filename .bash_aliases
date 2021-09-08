@@ -1,7 +1,7 @@
 alias sudo='sudo '
 
 # package management
-alias up='sudo apt update && sudo apt upgrade && sudo snap refresh'
+alias up='sudo apt update && sudo apt dist-upgrade && sudo snap refresh'
 alias search='sudo apt-cache search'
 alias autoremove='sudo apt autoremove'
 alias remove='sudo apt remove'
