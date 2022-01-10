@@ -81,7 +81,7 @@ alias osync='o && g up'
 # docker
 alias dkps='docker ps --format "ID: {{.ID}} ~ Nm: {{.Names}} ~ Sts: {{.Status}} ~ Img: {{.Image}}"'
 alias docker-smi='sudo docker run --gpus all --rm nvidia/cuda nvidia-smi'
-alias tensorflow='sudo docker run --gpus all -v $HOME:$HOME -u $(id -u):$(id -g) -it tensorflow/tensorflow:latest-gpu-py3-jupyter bash'
+alias tensorflow='sudo docker run --gpus all -v $HOME:$HOME -u $(id -u):$(id -g) -it tensorflow/tensorflow:latest-gpu-jupyter bash'
 
 # projects
 export PROJECTS_NAME='projects-repo'
