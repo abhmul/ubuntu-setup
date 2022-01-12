@@ -114,7 +114,8 @@ log "Test installation with dktest"
 log "Install opera at https://www.opera.com/download"
 sudo flatpak install flathub org.mozilla.firefox
 
-
+# Install paperless
+log "Install paperless at https://paperless-ng.readthedocs.io/en/latest/setup.html"
 
 # Setup git ssh key
 log "Setup git ssh key"
