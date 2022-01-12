@@ -42,6 +42,9 @@ bindsym XF86AudioLowerVolume exec "amixer -q sset Master,0 1- unmute"
 # Clipboard management
 bindsym $mod+Ctrl+c exec --no-startup-id ~/.scripts/clear-clipboard.sh
 
+# Setup paperless
+exec --no-startup-id ~/paperless-ng/start_paperless.sh
+
 # Setup workspaces
 exec --no-startup-id i3-msg 'workspace 2; exec i3-sensible-terminal; exec i3-sensible-terminal'
 exec --no-startup-id i3-msg 'workspace 3; exec nautilus $HOME/gdrive/sync-data/library/papers'
