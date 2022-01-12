@@ -69,6 +69,9 @@ sudo apt-add-repository -y ppa:yktooo/ppa
 sudo apt -y update
 sudo apt -y install indicator-sound-switcher
 sudo apt -y install redshift
+sudo add-apt-repository -y ppa:apandada1/brightness-controller
+sudo apt -y update
+sudo apt -y install brightness-controller
 
 # Setup background
 sudo apt -y install feh

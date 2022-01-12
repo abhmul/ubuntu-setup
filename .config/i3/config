@@ -25,6 +25,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 exec --no-startup-id indicator-sound-switcher
 exec --no-startup-id udiskie -t -a
+exec --no-startup-id brightness-controller
 
 # Setup Custom Managers
 exec --no-startup-id ~/indicators/nonotifs/nonotif_indicator.py
