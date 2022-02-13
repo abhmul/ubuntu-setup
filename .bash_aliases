@@ -48,6 +48,7 @@ alias ga='gitaliases'
 # sync-documents
 export DRIVE_PATH=$HOME/gdrive
 export SYNC_DOCUMENTS=$DRIVE_PATH/sync-documents
+export SYNC_DATA=$DRIVE_PATH/sync-data
 sync-documents() {
 	if [[ ! -d $SYNC_DOCUMENTS ]]
 	then
@@ -58,8 +59,20 @@ sync-documents() {
 	fi
 	cd $SYNC_DOCUMENTS
 }
+sync-data() {
+        if [[ ! -d $SYNC_DATA ]]
+        then
+                mkdir -p $DRIVE_PATH && \
+                cd $DRIVE_PATH && \
+                drive init && \
+                drive pull sync-data
+        fi
+        cd $SYNC_DATA
+}
+
 alias sd='sync-documents'
-alias library='sync-documents && cd library'
+alias sdata='sync-data'
+alias library='sync-data && cd library'
 
 # obsidian
 export VAULT_NAME='obsidian-vault'
