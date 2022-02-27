@@ -100,7 +100,7 @@ math_wiki() {
                 cd $OBSIDIAN_HOME && \
                 git clone git@github.com:abhmul/$MATH_WIKI_NAME.git
         fi
-        cd $VAULT_PATH
+        cd $MATH_WIKI_PATH
 }
 alias math='math_wiki'
 
