@@ -91,6 +91,19 @@ ovault() {
 alias o='ovault'
 alias osync='o && g up'
 
+export MATH_WIKI_NAME='math-wiki'
+export MATH_WIKI_PATH=$OBSIDIAN_HOME/$MATH_WIKI_NAME
+math_wiki() {
+        if [[ ! -d $MATH_WIKI_PATH  ]]
+        then
+                mkdir -p $OBSIDIAN_HOME && \
+                cd $OBSIDIAN_HOME && \
+                git clone git@github.com:abhmul/$MATH_WIKI_NAME.git
+        fi
+        cd $VAULT_PATH
+}
+alias math='math_wiki'
+
 # docker
 alias dkps='docker ps --format "ID: {{.ID}} ~ Nm: {{.Names}} ~ Sts: {{.Status}} ~ Img: {{.Image}}"'
 alias docker-smi='sudo docker run --gpus all --rm nvidia/cuda nvidia-smi'
