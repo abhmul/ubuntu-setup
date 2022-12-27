@@ -26,6 +26,7 @@ exec --no-startup-id blueman-applet
 exec --no-startup-id indicator-sound-switcher
 exec --no-startup-id udiskie -t -a
 exec --no-startup-id brightness-controller
+exec --no-startup-id psensor
 
 # Setup Custom Managers
 exec --no-startup-id ~/indicators/nonotifs/nonotif_indicator.py
@@ -76,10 +77,10 @@ font pango:monospace 8
 floating_modifier $mod
 
 # Multi-screen screenshots with scrot
-bindsym --release $mod+Print exec scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' # All screens
+bindsym --release $mod+x exec scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' # All screens
 
 # OSX-like area selection screenshots
-bindsym --release $mod+Shift+Print exec scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' # Area selection
+bindsym --release $mod+Shift+x exec scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' # Area selection
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal

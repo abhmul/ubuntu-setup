@@ -197,3 +197,6 @@ dktest() {
 # redshift
 alias night='redshift -O 3300'
 alias day='redshift -O 5400'
+
+# volume muting
+alias mute='pactl set-sink-mute 0 toggle'
