@@ -69,7 +69,7 @@ sync-data() {
         fi
         cd $SYNC_DATA
 }
-
+alias sync='drive pull -no-clobber && drive push'
 alias sd='sync-documents'
 alias sdata='sync-data'
 alias library='sync-data && cd library'

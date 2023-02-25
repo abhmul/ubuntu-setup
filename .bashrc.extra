@@ -19,5 +19,5 @@ export PATH=$EMACSPATH/bin:$PATH
 ### Computer Specific - Webster Desktop
 
 # Mount my data partition if it's not been mounted yet
-! [ -a "/media/abhijeet/Data" ] && udisksctl mount -b /dev/sda5
+# ! [ -a "/media/abhijeet/Data" ] && udisksctl mount -b /dev/sda5
 
