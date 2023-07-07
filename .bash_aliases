@@ -1,7 +1,7 @@
 alias sudo='sudo '
 
 # package management
-alias up='sudo apt update && sudo apt dist-upgrade && sudo snap refresh'
+alias up='sudo apt update && sudo apt dist-upgrade && sudo snap refresh && flatpak update'
 alias search='sudo apt-cache search'
 alias autoremove='sudo apt autoremove'
 alias remove='sudo apt remove'
@@ -28,8 +28,6 @@ alias startup='vim ~/.scripts/startup.sh'
 alias keys='xev | grep -A2 --line-buffered "^KeyRelease" | sed -n "/keycode /s/^.*keycode \([0-9]*\).* (.*, \(.*\)).*$/\1 \2/p"'
 alias logs='gedit /var/log/syslog'
 alias v='uname -a && lsb_release -a'
-alias desktop-apps='cd /usr/share/applications'
-alias apps='desktop-apps'
 
 # setup
 alias us='cd $HOME/ubuntu-setup'
