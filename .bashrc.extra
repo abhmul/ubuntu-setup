@@ -18,6 +18,9 @@ export PATH=$EMACSPATH/bin:$PATH
 
 ### Computer Specific - Webster Desktop
 
+export TEXLIVEPATH=/usr/local/texlive/2023/bin/x86_64-linux
+export PATH=$TEXLIVEPATH:$PATH
+
 # Mount my data partition if it's not been mounted yet
 # ! [ -a "/media/abhijeet/Data" ] && udisksctl mount -b /dev/sda5
 

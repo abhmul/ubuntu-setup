@@ -44,8 +44,8 @@ bindsym $mod+Ctrl+c exec --no-startup-id ~/.scripts/clear-clipboard.sh
 
 # Setup workspaces
 exec --no-startup-id i3-msg 'workspace 2; exec i3-sensible-terminal; exec i3-sensible-terminal'
-exec --no-startup-id i3-msg 'workspace 3; exec nautilus $HOME/gdrive/sync-data/library/papers'
-exec --no-startup-id i3-msg 'workspace 4; exec /opt/zotero/zotero-5.0.96.3_linux-x86_64/zotero'
+exec --no-startup-id i3-msg 'workspace 9; exec nautilus $HOME/gdrive/sync-data/library/papers'
+exec --no-startup-id i3-msg 'workspace 8; exec /opt/zotero/zotero-5.0.96.3_linux-x86_64/zotero'
 exec --no-startup-id i3-msg 'workspace 1; exec flatpak run md.obsidian.Obsidian/x86_64/stable'
 
 
