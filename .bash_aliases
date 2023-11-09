@@ -104,6 +104,20 @@ math_wiki() {
 }
 alias math='math_wiki'
 
+export TRIVIA_VAULT_NAME='trivia-vault'
+export TRIVIA_VAULT_PATH=$OBSIDIAN_HOME/$TRIVIA_VAULT_NAME
+trivia_vault() {
+        if [[ ! -d $trivia_vault  ]]
+        then
+                mkdir -p $OBSIDIAN_HOME && \
+                cd $OBSIDIAN_HOME && \
+                git clone git@github.com:abhmul/$TRIVIA_VAULT_NAME.git
+        fi
+        cd $TRIVIA_VAULT_PATH
+}
+alias trivia='trivia_vault'
+
+
 # docker
 alias dkps='docker ps --format "ID: {{.ID}} ~ Nm: {{.Names}} ~ Sts: {{.Status}} ~ Img: {{.Image}}"'
 alias docker-smi='sudo docker run --gpus all --rm nvidia/cuda nvidia-smi'
