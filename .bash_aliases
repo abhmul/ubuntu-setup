@@ -107,7 +107,7 @@ alias math='math_wiki'
 export TRIVIA_VAULT_NAME='trivia-vault'
 export TRIVIA_VAULT_PATH=$OBSIDIAN_HOME/$TRIVIA_VAULT_NAME
 trivia_vault() {
-        if [[ ! -d $trivia_vault  ]]
+        if [[ ! -d $TRIVIA_VAULT_PATH  ]]
         then
                 mkdir -p $OBSIDIAN_HOME && \
                 cd $OBSIDIAN_HOME && \
