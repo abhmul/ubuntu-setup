@@ -117,6 +117,19 @@ trivia_vault() {
 }
 alias trivia='trivia_vault'
 
+export THERAPY_VAULT_NAME='therapy-vault'
+export THERAPY_VAULT_PATH=$OBSIDIAN_HOME/$THERAPY_VAULT_NAME
+therapy_vault() {
+        if [[ ! -d $THERAPY_VAULT_PATH  ]]
+        then
+                mkdir -p $OBSIDIAN_HOME && \
+                cd $OBSIDIAN_HOME && \
+                git clone git@github.com:abhmul/$THERAPY_VAULT_NAME.git
+        fi
+        cd $THERAPY_VAULT_PATH
+}
+alias therapy='therapy_vault'
+
 
 # docker
 alias dkps='docker ps --format "ID: {{.ID}} ~ Nm: {{.Names}} ~ Sts: {{.Status}} ~ Img: {{.Image}}"'
