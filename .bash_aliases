@@ -130,6 +130,20 @@ therapy_vault() {
 }
 alias therapy='therapy_vault'
 
+export MANAGEMENT_VAULT_NAME='management-vault'
+export MANAGEMENT_VAULT_PATH=$OBSIDIAN_HOME/$MANAGEMENT_VAULT_NAME
+management_vault() {
+        if [[ ! -d $MANAGEMENT_VAULT_PATH  ]]
+        then
+                mkdir -p $OBSIDIAN_HOME && \
+                cd $OBSIDIAN_HOME && \
+                git clone git@github.com:abhmul/$MANAGEMENT_VAULT_NAME.git
+        fi
+        cd $MANAGEMENT_VAULT_PATH
+}
+alias manage='management_vault'
+
+
 
 # docker
 alias dkps='docker ps --format "ID: {{.ID}} ~ Nm: {{.Names}} ~ Sts: {{.Status}} ~ Img: {{.Image}}"'
